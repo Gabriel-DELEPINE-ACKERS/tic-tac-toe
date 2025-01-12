@@ -13,6 +13,7 @@ def test_place_piece():
     assert place_piece(grid, 1, 0, 1) is True
     assert grid[0][1] == 1
     assert place_piece(grid, 2, 0, 1) is False
+    assert place_piece(grid, 2, 4, 1) is False
 
 
 test_create_grid()
