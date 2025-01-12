@@ -1,4 +1,4 @@
-from main import create_grid, place_piece
+from main import create_grid, place_piece, verify_win
 
 
 def test_create_grid():
@@ -16,5 +16,20 @@ def test_place_piece():
     assert place_piece(grid, 2, 4, 1) is False
 
 
+def test_verify_win():
+    row_win = [[1, 1, 1], [0, 2, 0], [0, 0, 0]]
+    assert verify_win(row_win) == 1
+
+    col_win = [[1, 0, 0], [1, 2, 0], [1, 0, 0]]
+    assert verify_win(col_win) == 1
+
+    diag_win = [[2, 0, 0], [1, 2, 0], [1, 0, 2]]
+    assert verify_win(diag_win) == 2
+
+    no_win = [[2, 0, 0], [1, 1, 0], [1, 0, 2]]
+    assert verify_win(no_win) == 0
+
+
 test_create_grid()
 test_place_piece()
+test_verify_win()
