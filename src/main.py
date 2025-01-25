@@ -5,13 +5,11 @@ def create_grid(row, col):
         grid.append([0] * col)
     return grid
 
-
 def is_legal_play(grid, player, row, col):
     if grid[row][col] == 0:
         return True
     else:
         return False
-
 
 def is_in_grid(grid, row, col):
     return 0 <= row < len(grid) and 0 <= col < len(grid[0])
